@@ -1,0 +1,19 @@
+<%to = @to_user ? "#{@to_user.login}" : 'all'[:all] %>
+<%content_for(:title, ("Send message to "[:send_message_to]+ "&nbsp;" +to))%>
+
+<%content_for :page_header do%>
+ <h1><%="Send message to "[:send_message_to]+ "&nbsp;" + to %></h1>
+<%end%>
+
+<% content_for("right") do %>
+  <%if (@to_user and is_admin) %>
+    <div><%=link_to "Send message to all"[:send_message_to_all], :action=>"send_all"%></div>
+   <%end%>
+<%end%>
+
+<% form_for '@message', :url => @to_user ? {:id=>@to_user.id} : {}, :html => {:id => 'messageForm'} do%>
+	<%=error_messages_for 'message'%>			
+  	<%=forulio_editor 'message', 'body', {:rows=>8, :cols=>40, :class=>'post_editor'} %>
+	<br/>
+	<%=submit_tag "Send message"[:send_message]%>
+<%end%>

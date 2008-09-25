@@ -1,0 +1,20 @@
+--- 
+translations: 
+  :edit_: "Edit "
+  :_profile: " profile"
+  :profile: Profile
+  :status_online: Online
+  :status_offline: Offline
+  :about_me: "About me"
+  :signature: "Signature"
+  :birthday: "Bithday"
+  :time_zone: "Time Zone"
+  :save: Save
+  :select_avatar: Select avatar
+  :cancel: Cancel
+  :remove: Remove
+  :upload: Upload
+  :change: Change
+  :posted: "Posted"
+  :status: "Status"
+  :posts: posts

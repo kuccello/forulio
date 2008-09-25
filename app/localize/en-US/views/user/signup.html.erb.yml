@@ -1,0 +1,13 @@
+--- 
+translations: 
+  :sign_up: Sign up
+  :display_name: Display name
+  :password: Password
+  :email: Email
+  :confirm_pasword: Confirm password
+  :create_my_account: Create my account
+  :time_zone: Time Zone
+  :capcha: Captcha
+  :terms_before_link: "I accept "
+  :terms_link: terms
+  :terms_after_link: " of this forum"

@@ -1,0 +1,23 @@
+--- 
+translations: 
+  :_profile: " профайл"
+  :send_message_to: "Сообщение до "
+  :birthday: "День рождения"
+  :send: Отправить
+  :about: Детали
+  :time_zone: Часовой пояс
+  :posts_posted: Постов
+  :profile: профайл
+  :signature: Подпись
+  :status_offline: Offline
+  :status_online: Сейчас на форуме
+  :send_internal_message: отправить приватное сообщение
+  :zero: Нет
+  :account_valid_from: Пользователь активный с %s
+  :account_status_for: Статус пользователя %s
+  :set_user_valid_from: "Активировать пользователя "
+  :month: Следующего месяца
+  :now: Через
+  :week: Через неделю
+  :forever: Никогда
+  :update: Обновить

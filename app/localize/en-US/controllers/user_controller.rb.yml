@@ -1,0 +1,22 @@
+translations: 
+  :you_are_blocked_by_moderator: You are blocked by moderator
+  :login_welcome: Hello %s, welcome!
+  :user_is_not_active: Your account is not activated yet
+  :login_email_with_password_do_not_match: Email with password do not match
+  :account_created: Your account successfully created. Now you can sign in 
+  :account_created_with_verify: Your account successfully created. Verification email has been sent to you with instruction how to activate your acount. 
+  :user_should_have_at_least_one_role: User should have at least one role
+  :role_delete_error: Cann't delete role
+  :logged_off: Good bye
+  :password_changed: Password was successfully changed
+  :no_user_with_specified_email: No active user registered with given email
+  :cannot_reset_password_for_inactive_user: User with given email is not active, password can not be changed
+  :check_email_for_instruction_of_password_changing: Check your email for instructions how to change password
+  :account_updated: Your account successfully updated.  
+  :message_sent: Message sent
+  :message_can_not_be_empty: Message can not be empty
+  :avatar_upload_failed: Avatar not uploaded
+  :user_rejeted: Account successfully removed.  
+  :verification_mail_sent: Verification email has been sent.  
+  :valid_date_changed_to: Account activation date is set to %s
+  :account_valid_from: Account valid from %s

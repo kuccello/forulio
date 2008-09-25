@@ -1,0 +1,81 @@
+<div class="outerBox" >
+<div class="innerBox" >
+	<div class="contentBox" >
+		<div><%= link_to_remote "Update counters"[:update_counters], :url=>{:controller=>'adminus', :action=>'update_counters'},
+			:loading=>"$('admin_tasks_loader').show();", 
+			:complete=>"$('admin_tasks_loader').hide();document.location.href = document.location.href;"%></div>
+		<%if  context_string == 'user/profile' %>
+			<div><%=link_to("Edit Profile"[:edit_profile], edit_profile_path(params[:id] || current_user.id)) %></div>
+      <div><%=link_to("Delete this user"[:delete_this_user], {:controller=>"moderate", :action=>"delete_user", :id=>@user}, :confirm=>"Sure? All user's posts will also be deleted"[:confirm_users_posts_delete]) %></div>
+		<%end%>
+		<%if context_string == 'home/index' %>
+			<div id="create_link">
+			<%=link_to_remote 'Create category'[:create_category] , :url=>{:controller=>'admin/category', :action=>'new'}, 
+					:loading=>"$('admin_tasks_loader').show();", 
+					:complete => "$('admin_tasks_loader').hide()"	%>
+			</div>
+			<div id='create_category' style="display:none;">	</div>
+		<%end%>
+    <%if context_string == 'tags/index' %>
+      <div><%=link_to("Manage tags"[:manage_tags], :controller=>'tags', :action=>'manage') %></div>
+    <%end%>
+    
+    <%if context_string == 'search/user_posts' %>
+      <div id="create_link">
+			<%=link_to_remote 'Delete all posts of this user'[:delete_all_user_posts] , :url=>{:controller=>'moderate', :action=>'delete_user_posts', :id=>@user}, 
+					:loading=>"$('admin_tasks_loader').show();", 
+					:complete => "$('admin_tasks_loader').hide()",
+					:confirm=>"Sure?"[:sure_]	%>
+			</div>    
+      <div><%=link_to("Delete this user"[:delete_this_user], {:controller=>"moderate", :action=>"delete_user", :id=>@user}, :confirm=>"Sure? All user's posts will also be deleted"[:confirm_users_posts_delete]) %></div>
+    <%end%>
+    
+    <%if context_string == 'search/ip_posts' %>
+      <div id="create_link">
+			<%=link_to_remote 'Delete all posts from this ip'[:delete_all_ip_posts] , :url=>{:controller=>'moderate', :action=>'delete_ip_posts'}, 
+					:method => :post,
+					:loading=>"$('admin_tasks_loader').show();", 
+					:with=>"'ip=#{@ip}'",
+					:complete => "$('admin_tasks_loader').hide()",
+					:confirm=>"Sure?"[:sure_]	%>
+			</div>   
+			<%ip = BlackIp.find(:first, :conditions=>["ip=?", @ip])%>
+			<%if ip.nil?%>
+				<div id="block_ip">
+					<%=link_to_remote 'Block this ip'[:block_this_ip] , :url=>{:controller=>'moderate', :action=>'black'}, 
+						:method => :post,
+						:loading=>"$('admin_tasks_loader').show();", 
+						:with=>"'ip=#{@ip}'",
+						:complete => "$('admin_tasks_loader').hide()",
+						:confirm=>"Sure?"[:sure_]	%>
+				</div>   	 
+			<%else%>
+				<div id="block_ip">
+				<%=link_to_remote 'Unblock this ip'[:unblock_this_ip] , :url=>{:controller=>'moderate', :action=>'remove_black'}, 
+					:method => :post,
+					:loading=>"$('admin_tasks_loader').show();", 
+					:with=>"'ip=#{@ip}'",
+					:complete => "$('admin_tasks_loader').hide()",
+					:confirm=>"Sure?"[:sure_]	%>
+				</div>
+			<%end%>
+			<div>
+			 <%=link_to "Black list"[:black_list], {:controller=>"moderate", :action=>"ips"}%>
+			</div>
+    <%end%>
+    
+    <%if context_string == 'search/index' %>
+			<div id="create_link">
+			<%=link_to_remote 'Re-index'[:reindex] , :url=>{:controller=>'adminus', :action=>'se_index'}, 
+					:loading=>"$('admin_tasks_loader').show();", 
+					:complete => "$('admin_tasks_loader').hide()"	%>
+			</div>
+			<div id='create_category' style="display:none;">	</div>
+		<%end%>
+	</div>
+	<div style="height:30px">
+		<div style="float:right;padding-right:7px;"><%=link_to_function "Hide"[:hide], "$('admin_tasks_box', 'admin_tasks').invoke('toggle');"%></div>
+	</div>
+</div>
+</div>
+

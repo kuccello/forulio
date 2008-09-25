@@ -1,0 +1,12 @@
+--- 
+translations: 
+  :topics_marked_with_tags: Topics marked with %s
+  :filtered_topics: Filtered topics
+  :click_to_remove_from_filter: Click on tag to remove it from filter
+  :replies: Replies
+  :topic: Topic
+  :views: Views
+  :last_post: Last post
+  :click_to_add_to_filter: Click on tag to add or remove it from filter
+  :related_tags: "Related tags:"
+  

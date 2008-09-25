@@ -1,0 +1,19 @@
+<%=error_messages_for 'posted'%>
+<% form_remote_tag(:url => quick_reply_path(topic, post),  :loading=>"show_loader('reply_controls_#{post.id}', 'loader2');") do%>
+  <%=forulio_editor 'posted', 'content', {:id=>"reply_editor#{post.id}", :class=>'post_editor'} %>
+  
+  <div class="clear"></div>
+  <%=link_to "Attach file"[:attach_file], {}, :style=>"font-size:0.8em;", :onclick=>"$('q_file_#{post.id}').toggle();return false;"%>
+  
+    <div id="reply_controls_<%=post.id%>" style="float:right">
+      <%= submit_tag("Reply"[:reply]) %> <%="or"[:or]%> 
+      <a href="#" onclick="new Effect.Fade('reply_div_<%=post.id%>', {duration:0.5});return false;"><%="Cancel"[:cancel]%></a>
+    </div>
+  </div>
+<%end%>
+<div id='uploaded_files_<%=post.id%>'>
+  <%=render :partial=>"uploaded_files", :locals=>{:files=>[]} %>
+</div>
+<div id='q_file_<%=post.id%>' style="display:none;">
+      <%=render :partial=>"upload_file_form", :locals=>{:post_id=>post.id} 	%>
+</div>

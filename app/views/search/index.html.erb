@@ -1,0 +1,100 @@
+<%content_for(:title, "Search"[:search])%>
+
+<%content_for :page_header do%>
+  <h1><%="Search"[:search]%></h1>
+<%end%>
+
+
+<div class='search_div'>
+  <% form_tag '', :method=>"get" do%>
+    <input type='text' name='q' class='search_input' value="<%=params[:q]%>">
+   <input type='submit'  value="<%="Search"[:search]%>">
+  <%end%>
+</div>
+
+<div class='clear' style='height:30px;'></div>
+<%old_show=params[:show]%>
+<div class='result_links'>
+  
+  <%if @posts and @posts.length > 0%>
+    <span id='posts_link' class="selected" onclick="show_posts();"><%=pluralize(@posts.total_entries, :posts)%></span>
+  <%end%>
+  <%if session[:posts_count] && session[:posts_count] > 0 && params[:show]!='p' && !params[:show].nil? %>
+    <span id='posts_link'><%=link_to pluralize(session[:posts_count], :posts), {:show=>'p', :q=>params[:q]}%></span>
+  <%end%>
+  
+  
+  <%if @topics and @topics.length > 0%>
+    <span id='topics_link' <%if params[:show]=='t' || session[:posts_count] == 0%>class='selected'<%end%> onclick="show_topics();"><%=pluralize(@topics.total_entries, :topics)%></span>
+  <%end%>
+  <%if session[:topics_count] && session[:topics_count] > 0 && params[:show]!='t' && !params[:show].nil?%>
+    <span id='topics_link'><%=link_to pluralize(session[:topics_count], :topics), {:show=>'t', :q=>params[:q]}%></span>
+  <%end%>
+   
+</div>
+<div id='posts'>
+  <%params[:show]='p'%>
+  <%if @posts and @posts.length > 0%>
+    <%= will_paginate(@posts) || "<div class='clear' style='height:10px;'></div>" %>
+  <%end%>
+  
+  <table id="posts" cellpadding="0" cellspacing="0" style="width:100%" class="posts">
+    <%if @posts%>
+      <%@posts.each do |post|%>
+      	<%= render :partial=>'topics/post', :locals=>{:post=>post, :search=>true, :show_topics=>true} %>
+      <%end%>
+    <%end%>
+  </table>
+  <%= will_paginate @posts if @posts%>
+  <%params[:show]=old_show%>
+</div>
+
+
+<div id='topics' <%if params[:show]!='t' && (session[:posts_count] || 0)  > 0%>style='display:none;'<%end%>>
+  <%if @topics and @topics.length > 0%>
+    <%params[:show]='t'%>
+    <%= will_paginate(@topics) || "<div class='clear' style='height:10px;'></div>" %>
+    <table id="topics" cellpadding="0" cellspacing="0" class="forulio">
+      <tr>
+          <th>
+             
+          </th>
+          <th>
+             <%="Topic"[:topic]%> 
+          </th>
+          <th>
+             <%="Replies"[:replies]%> 
+          </th>
+          <th>
+             <%="Views"[:views]%> 
+          </th>
+          <th>
+             <%="Last post"[:last_post]%> 
+          </th>
+      </tr>
+    <%@topics.each do |topic|%>
+    	<%= render :partial=>'forums/topic', :locals=>{:topic=>topic, :show_forum=>true, :search=>true} %>
+    <%end%>
+  <%end%>
+  </table>
+  <%= will_paginate @topics if @topics%>
+  <%params[:show]=old_show%>
+</div>
+
+<script>
+  function show_posts(){
+    $('posts').show();
+    if ($('topics'))$('topics').hide();
+    if ($('posts_link'))$('posts_link').className = 'selected';
+    if ($('topics_link'))$('topics_link').className = '';
+  }
+  function show_topics(){
+    if ($('posts'))$('posts').hide();
+    $('topics').show();
+    if ($('posts_link'))$('posts_link').className = '';
+    if ($('topics_link'))$('topics_link').className = 'selected';
+  }
+</script>
+
+
+

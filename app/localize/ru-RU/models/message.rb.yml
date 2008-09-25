@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :body: Текст сообщения
+  :body_blank_error: не должен быть пустым

@@ -1,0 +1,6 @@
+--- 
+translations: 
+  :topic_was_created: Topic &quot;%s&quot; was successfully created
+  :topic_can_not_saved_because_of_error: Sorry, your topic can not be saved now. Please try again later
+  :topic_cannot_be_deleted: Topic can not be deleted
+  :upload_file_size_limit: Please select file with size less then

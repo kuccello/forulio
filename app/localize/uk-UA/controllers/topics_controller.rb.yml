@@ -1,0 +1,7 @@
+--- 
+translations: 
+  :topic_was_created: Тема &quot;%s&quot; успішно створена
+  :topic_can_not_saved_because_of_error: Тема не створена. Спробуйте пізніше.
+  :topic_cannot_be_deleted: Тема не може бути видалена
+  :upload_file_size_limit: Виберіть файл з розміром меншим за 
+

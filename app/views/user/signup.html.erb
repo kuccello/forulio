@@ -1,0 +1,84 @@
+<%content_for(:title, "Sign up"[:sign_up]) %>
+<%content_for :page_header do%>
+  <h1><%="Sign up"[:sign_up]%></h1>
+<%end%>
+
+<%=error_messages_for "user"%>
+<div class='signup_form'>
+	<% form_for '@user', :url => { :action => "signup"}, :html => {:id => 'signupForm'} do%>
+		<table>
+			<tr>
+				<th >
+					<%="Display name"[:display_name]%>:
+				</th>
+				<td>
+					<%=text_field "user", "login"%>
+				</td>
+			</tr>   
+		  <tr>
+				<th>
+					<%="Email"[:email]%>:
+				</th>
+				<td>
+					<%=text_field "user", "email"%>
+				</td>
+			</tr>    
+			<tr>
+				<th>
+					<%="Password"[:password]%>:
+				</th>
+				<td>
+					<%= password_field "user", "password",  :class=>"text", :size => "25"%>
+				</td>
+			</tr>
+			
+			<tr>
+				<th>
+					<%="Confirm password"[:confirm_pasword]%>:
+				</th>
+				<td>
+					<%= password_field "user", "password_confirmation",  :class=>"text", :size => "25"%>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<%="Time Zone"[:time_zone]%>:
+				</th>
+				<td>
+					<%= time_zone_select 'user_profile', 'time_zone', TimeZone.all, :default => Configuration.default_time_zone %>
+					<script>
+						TimeZone.findDefault('user_profile_time_zone');
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<th>
+					<%="Captcha"[:capcha]%>
+				</th>
+				<td>
+					<%= show_simple_captcha(:object=>"user", :image_style=>'simply_red') %>
+				</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td class='terms_check'>
+					<%= check_box("user", "terms", { }, "yes", "no") %>
+					<%="I accept "[:terms_before_link]%>
+					<a onclick="window.open(this.href, 'terms', 'width=600,height=400');return false"
+						href="/terms.html" ><%="terms"[:terms_link]%></a>
+					<%=" of this forum"[:terms_after_link]%>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td style="text-align:left">
+					<%=submit_tag "Create my account"[:create_my_account]%>
+				</td>
+			</tr>
+			
+			
+		</table>
+	<%end%>
+</div>
+<div class='clear'></div>
+

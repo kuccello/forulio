@@ -1,0 +1,15 @@
+--- 
+translations: 
+  :logout: Выйти
+  :signup: Зарегистрироваться
+  :login: Войти
+  :search: Поиск
+  :users: Пользователи
+  :new_posts: Новые
+  :tags: Теги
+  :monitoring: Под наблюдением
+  :blocked_users: Баня
+  :black_list: Чорный список IP
+  :favorites: Любимые
+  :admin_tasks: Администрирование
+  :powered_by: Движок

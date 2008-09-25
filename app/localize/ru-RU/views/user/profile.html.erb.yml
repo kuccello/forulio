@@ -1,0 +1,20 @@
+--- 
+translations: 
+  :posted: "Написал:"
+  :upload: Загрузить
+  :save: Сохранить
+  :posts: постов
+  :cancel: Отменить
+  :status: "Статус:"
+  :birthday: "День рождения:"
+  :signature: "Подпись:"
+  :_profile: " профайл"
+  :edit_: "Редактировать "
+  :profile: Профайл
+  :change: Изменить
+  :about_me: "О мне:"
+  :remove: Удалить
+  :time_zone: "Часовой пояс:"
+  :select_avatar: Выберите аватар
+  :status_online: Сейчас на форуме
+  :status_offline: Offline

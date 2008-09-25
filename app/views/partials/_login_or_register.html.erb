@@ -1,0 +1,11 @@
+<%if not current_user%>
+<div class='login_or_register'>
+  <%=link_to "Sign in"[:sign_in], :controller=>'login', :to=>url_for%> <%="or"[:or]%> <%=link_to "Sign up"[:sign_up], signup_path%> 
+  <%if params[:controller]=='forums'%>
+    <%="to start new topic."[:to_start_new_topic]%>
+  <%end%>
+  <%if params[:controller]=='topics'%>
+    <%="to post reply or start new topic."[:to_post_reply_or_start_new_topic]%>
+  <%end%>
+</div>
+<%end%>

@@ -1,0 +1,14 @@
+--- 
+plurals: 
+  :post: posts
+  :topic: topics
+translations: 
+  :topic: topic
+  :post: post
+  :no_topics_yet: No topics yet
+  :in: in
+  :ago: ago
+  :to: to
+  :no_posts_yet: No posts yet
+  :by: by
+  

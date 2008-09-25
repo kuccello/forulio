@@ -1,0 +1,6 @@
+--- 
+translations: 
+  :title: Название роли
+  :role_valid_format: имеет плохие символы
+  :role_too_long: должно быть меньше чем 100 символов
+  :role_too_short: должно быть больше за 2 символа

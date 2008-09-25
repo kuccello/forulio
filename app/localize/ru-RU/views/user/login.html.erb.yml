@@ -1,0 +1,10 @@
+--- 
+translations: 
+  :forgot_password: Забыл пароль
+  :remember_me: Помнить меня 2 недели
+  :email: Email
+  :password: Пароль
+  :sign_in: Вход на форум
+  :sign_in_button: Войти
+  :send_verification_email: Отправить письмо с подтверждением регистрации
+  

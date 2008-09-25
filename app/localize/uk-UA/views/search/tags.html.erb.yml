@@ -1,0 +1,12 @@
+--- 
+translations: 
+  :topics_marked_with_tags: Теми помічені як %s
+  :filtered_topics: Відфільтровані теми
+  :click_to_remove_from_filter: Клацніть по мітці щоб забрати її з фільтру
+  :replies: Відповіді
+  :topic: Тема
+  :views: Переглядів
+  :last_post: Остання відповідь
+  :click_to_add_to_filter: Клацніть по мітці щоб додати чи забрати її з фільтру
+  :related_tags: "Пов'язані мітки:"
+  

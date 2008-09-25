@@ -1,0 +1,15 @@
+--- 
+translations: 
+  :logout: Logout
+  :signup: Signup
+  :login: Login
+  :search: Search
+  :users: Users
+  :new_posts: New posts
+  :tags: Tags
+  :monitoring: Monitoring
+  :blocked_users: Blocked users
+  :black_list: Black list
+  :favorites: Favourites
+  :admin_tasks: Admin tasks
+  :powered_by: Powered by

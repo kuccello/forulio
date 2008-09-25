@@ -1,0 +1,18 @@
+--- 
+translations: 
+  :sure_: Sure?
+  :update_counters: Update counters
+  :delete_this_user: Delete this user
+  :edit_profile: Edit Profile
+  :confirm_users_posts_delete: Sure? All user's posts will also be deleted
+  :create_category: Create category
+  :manage_tags: Manage tags
+  :delete_all_user_posts: Delete all posts of this user
+  :delete_all_ip_posts: Delete all posts from this ip
+  :unblock_this_ip: Unblock this ip
+  :block_this_ip: Block this ip
+  :reindex: Re-index
+  :hide: Hide
+  :black_list: Black list
+  
+  

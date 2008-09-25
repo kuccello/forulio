@@ -1,0 +1,13 @@
+--- 
+translations: 
+  :confirm_pasword: Пароль ще раз
+  :capcha: Капча
+  :create_my_account: Зареєструватись
+  :password: Пароль
+  :email: Email
+  :sign_up: Реєстрація
+  :time_zone: Часовий пояс
+  :display_name: Ім'я
+  :terms_before_link: "Я погоджуюсь з"
+  :terms_link: правилами
+  :terms_after_link: " цього форуму"

@@ -1,0 +1,22 @@
+translations: 
+  :you_are_blocked_by_moderator: Ваш профіль заблоковано модератором
+  :login_welcome: "Здрастуйте %s, раді бачити вас на форумі"
+  :user_is_not_active: Ваш профіль ще не активований
+  :login_email_with_password_do_not_match: "Помилка при вході, перевірте логін та гасло"
+  :account_created: Ваш профіль успішно створений. Тепер ви можете увійти на форум.
+  :account_created_with_verify: Ваш профіль успішно створений, на вашу скриньку надіслана інструкція для його активації. 
+  :user_should_have_at_least_one_role: Користувач мусить мати хоча б одну роль.    
+  :role_delete_error: Неможливо видалити роль
+  :logged_off: До побачення!  
+  :password_changed: Пароль змінено
+  :no_user_with_specified_email: Користувача з введеною поштовою скринькою не існує на форумі
+  :cannot_reset_password_for_inactive_user: Профіль не активний, гасло не може бути змінено.
+  :check_email_for_instruction_of_password_changing: Перевірте свою пошту – слідуйте інструкціям для зміни паролю
+  :account_updated: Профіль успішно оновлено
+  :message_sent: Повідомлення надіслано
+  :message_can_not_be_empty: Повідомлення не може бути пустим
+  :avatar_upload_failed: Аватар не завантажилась
+  :user_rejeted: Профіль успішно видалений.
+  :verification_mail_sent: На вашу скриньку надіслана інструкція
+  :valid_date_changed_to: Дату активації встановлено на %s
+  :account_valid_from: Дата активації профіля - %s 

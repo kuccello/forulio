@@ -1,0 +1,6 @@
+<img id="topic_loader_<%=topic.id%>" src="/images/loader1.gif" style="display:none" />
+<div id="topic_tasks_content_<%=topic.id%>">
+<%=link_to_remote image_tag('delete.png') , :url=>{:controller=>'topics', :action=>'delete', :id=>topic}, 
+    					:loading => "Topic.startRemoteTask(#{topic.id});", 
+						:complete=>"Topic.stopRemoteTask(#{topic.id});", :confirm=> "Sure?"[:sure_] %>
+</div>
