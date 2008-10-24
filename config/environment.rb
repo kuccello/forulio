@@ -59,7 +59,7 @@ Rails::Initializer.run do |config|
   # config.active_record.default_timezone = :utc
 end
 
-
+ActionMailer::Base.delivery_method = :sendmail
 
 require 'time_with_zone'
 require 'exceptions.rb'
