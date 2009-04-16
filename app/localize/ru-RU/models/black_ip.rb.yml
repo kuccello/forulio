@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :ip: IP-адрес
+  :ip_not_unique: должна быть уникальной

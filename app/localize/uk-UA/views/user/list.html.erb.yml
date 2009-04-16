@@ -1,0 +1,11 @@
+--- 
+translations: 
+  :users_list: Список користувачів
+  :users: Користувачі
+  :send_message_to_all: Надіслати повідомлення усім
+  :registration: Реєстрація
+  :name: Ім'я
+  :posted: Записів
+  :last_login: Останній вхід
+  :send_message: надіслати повідомлення
+  :never: Ніколи

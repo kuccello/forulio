@@ -1,0 +1,40 @@
+--- 
+time: 
+  :MONTHNAMES: "Января Февраля Марта Апреля Мая Июня Июля Августа Сентября Октября Ноября Декабря"
+  :DAYNAMES: "Воскресенье Понедельник Вторник Среда Четверг Пятница Субота"
+  :ABBR_MONTHNAMES: "Янв Фвр Мрт Апр Май Июн Июл Авг Снт Окт Нбр Дкб"
+  :ABBR_DAYNAMES: "Вс Пн Вт Ср Чт Пт Сб"
+translations: 
+  :description: Форум для легкого общения.
+  :site_name: "Форум Форулио"
+  :default_title: "теговий форум на Ruby on Rails."
+  :footer_slogan: "Общайтесь на здоровье!"
+  
+  :n_minutes_1: "%d минуты"
+  :n_days: "%d дней"
+  :one_day: "1 день"
+  :half_minute: "пол-минуты"
+  :n_days_2: "%d дней"
+  :less_than_n_seconds_2: "меньше %d секунд"
+  :about_month: "около 1 месяця"
+  :n_minutes: "%d минут"
+  :n_days_1: "%d день"
+  :less_than_n_seconds_1: "меньше %d секунды"
+  :n_month: "%d месяцев"
+  :about_hour: "около 1 часа"
+  :about_n_hours_2: "окого %d часов"
+  :less_than_minute: "меньше минуты"
+  :one_year: "около года"
+  :about_n_hours_1: "около %d часа"
+  :about_n_hours: "около %d часов"
+  :one_minute: "1 минуту"
+  :n_month_2: "%d месяца"
+  :over_n_years: "больше %d лет"
+  :n_minutes_2: "%d минуты"
+  :less_than_n_seconds: "меньше %d секунд"
+  :n_month_1: "%d месяць"
+  :status_newbie: Новенький
+  :status_user: Бывалый
+  :wrote: "написал (ла)"
+  :active_record_error_message: ""
+  :active_record_error_header: "Операция не может быть завершена из-за следующих ошибок:"

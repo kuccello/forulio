@@ -1,0 +1,22 @@
+translations: 
+  :you_are_blocked_by_moderator: Ваш профайл заблокирован модератором
+  :login_welcome: "Привет %s, рады вас видеть у нас на форуме"
+  :user_is_not_active: Ваш профайл еще не активирован
+  :login_email_with_password_do_not_match: "Ошибка при входе, проверьте адрес электропочты и пароль"
+  :account_created: Ваш профайл успешно создан. Теперь вы можете зайти на форум.
+  :account_created_with_verify: Ваш профайл успешно создан, на вашу почту послана инструкция для его активации. 
+  :user_should_have_at_least_one_role: Пользователь должен иметь хотя бы одну роль.    
+  :role_delete_error: Нельзя удалить роль
+  :logged_off: До свидания!  
+  :password_changed: Пароль изменен
+  :no_user_with_specified_email: Пользователь с таким адресом почты не существует на форуме.
+  :cannot_reset_password_for_inactive_user: Профайл не активный, пароль не может быть изменен.
+  :check_email_for_instruction_of_password_changing: Проверьте свою почту и следуйте инструкциям для смены пароля.
+  :account_updated: Профайл успешно изменен
+  :message_sent: Сообщение отправлено
+  :message_can_not_be_empty: Сообщение не должно быть пустым
+  :avatar_upload_failed: Аватар не загрузился
+  :user_rejeted: Профайл успешно удален
+  :verification_mail_sent: На вашу почту отправлена инструкция
+  :valid_date_changed_to: Дату активации установлено на %s
+  :account_valid_from: Дата активации профайла - %s 

@@ -1,0 +1,25 @@
+<table class='messages'>
+  <%messages.each do |m|%>
+   <tr id='m_tr_<%=m.id%>'>
+      <td class='date'>
+        <%=m.created_at.strftime("%Y-%m-%d, %H:%M")%>
+      </td> 
+      <td class='author'>
+        <%=link_to m.sender.login, profile_path(m.sender)%>
+        <%if m.sender != current_user%>
+          <small><%=link_to image_tag('im.gif', :title=>"send message"[:send_message]), send_message_path(m.sender.id)%></small>
+        <%end%>
+        :
+      </td> 
+      <td class='content'>
+        <%=html_encode(m.body, true)%>
+        <% hover_for("m_tr_#{m.id}", :template=>'message_hover', :locals=>{:m => m})%>
+      </td>  
+    </tr>
+    <tr id='m_tr_<%=m.id%>_next'>
+      <td colspan='3'>
+        <hr class='soft'/>
+      </td> 
+    </tr>
+  <%end%>
+</table>  

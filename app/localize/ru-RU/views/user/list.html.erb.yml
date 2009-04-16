@@ -1,0 +1,11 @@
+--- 
+translations: 
+  :users_list: Список пользователей
+  :users: Пользователи
+  :send_message_to_all: Отправить сообщение всем
+  :registration: Регистрация
+  :name: Імя
+  :posted: Постов
+  :last_login: Последний вход
+  :send_message: отправить сообщение
+  :never: Никогда

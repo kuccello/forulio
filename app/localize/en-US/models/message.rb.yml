@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :body: Message text
+  :body_blank_error: can't be empty

@@ -1,0 +1,14 @@
+--- 
+plurals: 
+  :post: posts
+  :user: users
+  :topic: topics
+translations: 
+  :mark_all_as_read: Mark all forums as read
+  :user: user
+  :posted: posted
+  :post: post  
+  :in: in
+  :topic: topic
+
+

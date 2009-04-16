@@ -1,0 +1,11 @@
+--- 
+translations: 
+  :page: Сторінка
+  :click_to_add_to_topic_filter: Клацніть по тегу щоб додати фільтрування по ньому
+  :click_to_remove_from_topic_filter: Клацніть по тегу щоб відмінити фільтрування по ньому
+  :first_new_post: Перший новий пост
+  :reply: Відповісти
+  :related_tags: "Теги до теми:"
+  :close_topic: Закрити
+  :remove_sticky: Відкріпити
+  :add_sticky: Закріпити

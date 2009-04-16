@@ -1,0 +1,8 @@
+<img id="cat_loader_<%=category.id%>" src="/images/loader1.gif" style="display:none" />
+<div id="cat_tasks_content_<%=category.id%>">
+ <%=link_to_remote image_tag('delete.png') , :url=>{:controller=>'admin/category', :action=>'delete', :id=>category}, 
+  							:loading => "Category.startRemoteTask(#{category.id});", :confirm=> "Sure?"[:sure_] %>
+ <%=link_to_remote image_tag('add.png') , :url=>{:controller=>'admin/forum', :action=>'new', :category=>category},
+  							:loading => "Category.startRemoteTask(#{category.id});",
+  							:complete=>"Category.stopRemoteTask(#{category.id});" %>
+</div>

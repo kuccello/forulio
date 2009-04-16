@@ -1,0 +1,37 @@
+<%content_for(:title, @categories.first.title) unless params[:id].nil?%>
+<%content_for :right do%>
+     <%=render :partial=>"partials/online_users"%>    
+<%end%>
+
+<%unless params[:id].nil?  %>
+  <p class="path" style="padding-left:30px">
+    <%=link_to Configuration.site_name, :controller=>'home' %>&rarr;
+    <span class="last_path_title"><%=html_encode(@categories.first.title)%></span>
+  </p>
+<%end%>
+
+
+<table id="forulio" cellpadding="0" cellspacing="0" class="forulio">
+<tr >
+	<td width="30px" style='height : 0px;'></td>
+	<td style='text-align:left;'></td>
+	<td class="lastpost" ></td>
+</tr>
+<%@categories.each do |category|%>
+	<%=render :partial=>'category', :locals=>{:category=>category, :show_category=>true}%>
+<%end%>
+</table>
+  <%c_users = User.count%>
+  <%c_topics = Topic.count%>
+  <%c_posts = Post.count%>
+<p>
+<%if current_user && has_new_posts(@categories) && c_posts > 0%>
+  <small><%=link_to "Mark all forums as read"[:mark_all_as_read], {:mark_as_read=>true}%></small>
+<%end%>
+</p>
+
+<p>
+  
+  <small><%=pluralize(c_users, :user)%> <%="posted"[:posted]%> <%=pluralize(c_posts, :post)%> <%="in"[:in]%> <%=pluralize(c_topics, :topic)%></small>
+
+</p>

@@ -1,0 +1,13 @@
+<tr id='tag_<%=tag.id%>'>
+  <td>
+    <%=link_to(tag.title, tags_filter_path(tag.id) , {:style=>tag.style} ) %>
+  </td>
+  <td align='center'><%=tag.status_string%></td>
+  <td align='center'><%=formatted_time(tag.created_at)%></td>
+  <td align='center'><img src="/images/loader1.gif" style="display:none">
+                    <span><%=link_to_remote "Edit"[:edit], :url=>{:action=>"edit", :controller=>"tags", :id=>tag}, 
+												:loading=>"Tag.startRemoteGridTask(#{tag.id});"%>&nbsp;&nbsp;
+                       <%=link_to_remote "Delete"[:delete], :url=>{:action=>"delete", :controller=>"tags", :id=>tag}, :confirm=>'Sure?'[:sure],
+												:loading=>"Tag.startRemoteGridTask(#{tag.id});"%>  
+                    </span></td>
+</tr>

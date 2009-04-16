@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :can_not_delete_first_post: Post can not be deleted. Delete topic instead.
+  :post_editing_expired: You can't edit post anymore

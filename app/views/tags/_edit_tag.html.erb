@@ -1,0 +1,26 @@
+<tr id='tag_<%=tag.id%>'>
+  <td colspan='5'>
+    <%=error_messages_for 'tag'%>
+    <% form_remote_for(:tag, tag, :url => {:controller=>'tags', :action => "update", :id=>tag}, :loading=>"Tag.startRemoteEditTask(#{tag.id});") do |f|%>
+  	  <table cellpadding="0" cellspacing="0">
+  	    <tr>
+  	       <td><%="Title"[:tag_title]%></td>
+           <td><%= f.text_field 'title', :style=>"width:300px;"%></td>
+  	    </tr>
+        <tr>
+  	       <td><%="Style"[:tag_style]%></td>
+           <td><%= f.text_field 'style', :style=>"width:300px;"%></td>
+  	    </tr>
+        <tr>
+  	       <td><%="Status"[:status]%></td>
+           <td><%= f.select('status', Tag.status_options)%></td>
+  	    </tr>
+        <tr>
+          <td></td>
+          <td align="left">
+            <%= submit_tag("Save"[:save]) %>&nbsp;<%= 'or'[:or]%>&nbsp;<%=link_to_function('Cancel'[:cancel], "Tag.cancelEdit(#{tag.id})") %>
+          </td>
+        </tr>
+  	  </table>
+    <%end%>
+</tr>

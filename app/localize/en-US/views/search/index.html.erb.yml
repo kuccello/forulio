@@ -1,0 +1,12 @@
+--- 
+translations: 
+  :search: Search
+  :posts: post
+  :topics: topic
+  :topic: Topic
+  :last_post: Last post
+  :replies: Replies
+  :views: Views
+plurals:
+  :posts: posts
+  :topics: topics

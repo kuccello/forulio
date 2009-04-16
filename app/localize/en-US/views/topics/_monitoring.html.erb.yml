@@ -1,0 +1,5 @@
+--- 
+translations: 
+  :with_email_notification_: With email notification?
+  :monitoring: "Monitoring. Click to stop. "
+  :not_monitoring: "Not monitoring. Click to start. "

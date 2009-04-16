@@ -1,0 +1,28 @@
+<% new_id = 'forum_new_tr_' + Time.now().to_i().to_s%>
+<tr id="<%=new_id%>">
+	<td>
+		
+	</td>
+	<td>
+		<%=error_messages_for 'forum'%>
+		<% form_remote_tag(:url => { :action => "create", :update_id=>new_id}, :loading=>"show_loader('forum_loader_#{new_id}', 'loader1')") do%>
+		    <table border="0" class="edit_forum">
+		      <tr><td width="30%"><%="Title"[:title]%>:</td><td><%= text_field 'forum', 'title', { :class => 'edit'} %></td></tr>
+		      <tr><td><%="Description"[:description]%>:</td><td><%= text_field 'forum', 'description', { :class => 'edit'} %></td></tr>
+		      <tr><td>&nbsp;</td><td align="left">
+		      	<div id="forum_loader_<%=new_id%>" >
+		          	<%= submit_tag("Save"[:save]) %>
+		    		<a href="javascript:void(0)" onclick="$('<%=new_id%>').remove();"><%="Cancel"[:cancel]%></a></td></tr>
+				</div>
+		    </table>
+			<%= hidden_field('forum', 'category_id') %>
+		<%end%>
+		
+	</td>
+	<td vAlign="top">
+		
+	</td>
+</tr>
+
+
+

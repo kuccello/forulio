@@ -1,0 +1,19 @@
+--- 
+plurals: 
+  :posts: записів
+  :posts_1: запис
+  :posts_2: записи
+translations: 
+  :posts: запис
+  :user_posted: написав
+  :for_about: за
+  :post_was_posted: додано
+  :ago: тому
+  :in: в
+  :edit: редагувати
+  :add_tags: додати теги
+  :sure_: Впевнені?
+  :posted_from: "написано з "
+  :reply: відповісти
+  :on_forum: на форумі.
+  

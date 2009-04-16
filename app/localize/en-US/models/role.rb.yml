@@ -1,0 +1,6 @@
+--- 
+translations: 
+  :title: Role name
+  :role_valid_format: must not contain invalid characters.
+  :role_too_long: must have less than 100 characters.
+  :role_too_short: must have more than two characters.

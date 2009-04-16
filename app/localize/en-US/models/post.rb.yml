@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :content: Post 
+  :content_blank_error: can't be empty

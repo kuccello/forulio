@@ -1,0 +1,37 @@
+<%content_for(:title, "Topics marked with %s"[:topics_marked_with_tags] % [@tags.collect{|t| t.title}.join(", ")])%>
+
+<%content_for :page_header do%>
+  <h1><%="Filtered topics"[:filtered_topics]%></h1>
+<%end%>
+
+<%=render :partial=>'partials/tags', :locals=>{:tags=>@tags}%><br/>
+<small class="hint"><%="Click on tag to remove it from filter"[:click_to_remove_from_filter]%></small>
+<div id='topics'>
+	<%= will_paginate(@topics) || "<div class='clear' style='height:10px;'></div>" %>
+	<table id="topics" cellpadding="0" cellspacing="0" class="forulio">
+    <tr>
+		<th></th>
+        <th><%="Topic"[:topic]%></th>
+        <th><%="Replies"[:replies]%></th>
+		<th><%="Views"[:views]%></th>
+		<th><%="Last post"[:last_post]%></th>
+    </tr>
+    <%@topics.each do |topic|%>
+    	<%= render :partial=>'forums/topic', :locals=>{:topic=>topic, :show_forum=>true, :search=>false} %>
+    <%end%>
+  </table>
+  <%= will_paginate @topics%>
+</div>
+
+
+<%content_for :right do%>
+	<%if @related_tags.length > 0%>
+	<div class="outerBox" >
+		<div class="innerBox" >
+			<b><%="Related tags:"[:related_tags]%></b><br/>
+      <small class="hint"><%="Click on tag to add it to filter"[:click_to_add_to_filter]%></small><br/>
+			<%=render :partial=>"partials/tags", :locals=>{:tags=>@related_tags, :search_url=>false}%>    
+		</div>
+	</div>
+	<%end%>
+<%end%>

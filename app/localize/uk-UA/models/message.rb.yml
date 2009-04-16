@@ -1,0 +1,4 @@
+--- 
+translations: 
+  :body: Текст повідомлення
+  :body_blank_error: не може бути пустим

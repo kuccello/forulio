@@ -1,0 +1,29 @@
+<div class="monitoring" id="monitoring">
+  <%unless current_user.nil?%>
+  <%monitoring = MonitoringTopic.monitoring?(topic, current_user) %>
+  <%=
+					image_tag(monitoring ? 'monitoring_on.gif' : 'monitoring_off.gif',
+						:alt => monitoring ? "Monitoring. Click to stop. "[:monitoring] : "Not monitoring. Click to start. "[:not_monitoring],
+						:title => monitoring ? "Monitoring. Click to stop. "[:monitoring] : "Not monitoring. Click to start. "[:not_monitoring],
+					  :style=>"cursor:pointer;", :onclick => "toggle_monitoring(#{topic.id}, #{monitoring}); return false;")
+	%>
+  <%end%>
+</div>
+
+<script>
+  function toggle_monitoring(topic_id, monitoring){
+    is_email = ''
+    if (monitoring==false && window.confirm('<%="Add email notification?"[:with_email_notification_]%>')) {
+       is_email = '?is_email=1' 
+    }
+    new Ajax.Request('/topics/toggle_monitoring/' + topic_id + is_email, 
+      {
+        asynchronous:true, evalScripts:true, 
+        onComplete:function(request){$('monitoring').replace(request.responseText)}, 
+        onLoading:function(request){show_loader('monitoring', 'spinner')}
+      }
+    ); 
+    return false;
+  }
+</script>
+

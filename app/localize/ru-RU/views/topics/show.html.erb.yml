@@ -1,0 +1,11 @@
+--- 
+translations: 
+  :page: Страница
+  :click_to_add_to_topic_filter: Щелкайте по тегу, чтобы фильтрировать тему по нему
+  :click_to_remove_from_topic_filter: Щелкайте по тегу, чтобы забрать его из фильтра
+  :first_new_post: Первый новый пост
+  :reply: Ответить
+  :related_tags: "Теги к теме:"
+  :close_topic: Закрыть
+  :remove_sticky: Отлепить
+  :add_sticky: Прилепить

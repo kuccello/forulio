@@ -1,0 +1,15 @@
+<%if current_user%>
+  <%users = User.online_users%>
+  <%users << current_user unless users.include? current_user%>
+  <%if users.length>0%>
+    <div class="outerBox">
+      <div class="innerBox">
+          <h3><%="Online"[:online]%></h3>
+          <%users.delete(current_user)%>
+          <%users.collect!{|usr| link_to(usr.login, profile_path(usr), {:class=>'name'})}%>
+          <%users << link_to("<b>You</b>"[:you], profile_path(nil))%>
+          <%=users.join(', ')%>
+  	    </div>
+    </div>
+  <%end%>   
+<%end%>

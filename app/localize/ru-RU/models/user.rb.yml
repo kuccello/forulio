@@ -1,0 +1,17 @@
+--- 
+translations: 
+  :capcha_invalid: Код на рисунке не соответствует тому, что ввели вы.
+  :terms: ""
+  :accept_terms: Нужно согласиться с правилами форума для успешной регистрации.
+  :email: Электропочта
+  :email_blank_error: есть обязательной.
+  :email_invalid: должна быть правильной.
+  :password: Пароль
+  :password_blank_error: не должен быть пустым.
+  :password_invalid: не должен содержать плохих символов.
+
+  :password_too_long: должен состоять от %d до %d символов.
+  :password_too_short: должен состоять от %d до %d символов.
+  :password_confirm_error : должен совпадать в обоих полях.
+  
+  

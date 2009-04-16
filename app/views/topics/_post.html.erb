@@ -1,0 +1,63 @@
+<%search ||= false%>
+<tr id="tr_post_<%=post.id%>">
+  <td class='post_author' style='background-color : <%=Configuration.avatar_bg_color%>;'>
+    <div class="content_wrapper">
+      <div class='info'>
+        <%=user_avatar(post.user.profile)%><br/>
+        <%user=post.user%>
+        <%=link_to user.login, profile_path(user), {:class=>'name'}%><br/>
+	    <span class="user_status"><%=get_user_status(user)%></span><br/>
+        <%='posted'[:user_posted]%> <%=pluralize(user.posts_count, :posts) %><br/>
+        <%='for'[:for_about]%> <%=	time_ago_in_words(user.created_at)%> <%'on forum.'[:on_forum]%>
+		  </div>
+    </div>
+  </td>
+  <td class='post_content'>
+    <a name="post<%=post.id%>"></a>
+    <div class="content_wrapper">
+    <div class='info <%=css_class_for_age(post.created_at)%> <%="info_with_topic" if show_topics %>' >
+      <div style="float:left"><%='posted'[:post_was_posted]%> <%=time_ago_in_words(post.created_at)%> <%='ago'[:ago]%> (<%=formatted_time(post.created_at)%>)
+        <%= ("<br/>" + "in"[:in] +" " + link_to(post.topic.title, topic_path(post.topic))) if show_topics %>
+      </div>
+      <div style="float:right;">
+        <%if post.id and logged?%>
+  			<img src='/images/loader1.gif' id='loader_<%=post.id%>' style="display:none;padding-top:3px;" />&nbsp;
+  			<span id="header_controls<%=post.id%>" >
+    		<%=link_to_remote 'edit'[:edit], :url=>{:controller=>'posts', :action=>'edit', :id=>post},  :html=>{:id=>"edit_#{post.id}"},
+  						:loading=>"$('loader_#{post.id}', 'header_controls#{post.id}').invoke('toggle');",
+  						:complete=>"$('loader_#{post.id}', 'header_controls#{post.id}').invoke('toggle');" if can_edit_post(post)	%>
+ 			  <%if can_reply_post(post) %>
+          <a href="add_tags" onclick="$('add_tags_<%=post.id%>').toggle();return false;"><%='add tags'[:add_tags]%></a>
+          <%=link_to_remote 'reply'[:reply], :url=>quick_reply_path(post.topic, post), :html=>{:id=>"reply_#{post.id}"},
+    						:loading=>"$('loader_#{post.id}', 'header_controls#{post.id}').invoke('toggle');",
+    						:complete=>"$('loader_#{post.id}', 'header_controls#{post.id}').invoke('toggle');" %>
+        <%end%>
+        <%if is_moderator%>
+          <%=link_to_remote 'x', :url=>{:controller=>'posts', :action=>'delete', :id=>post}, :confirm=>"Sure?"[:sure_]%>
+        <%end%>
+			</span>
+		<%end%>
+      </div>
+    </div>
+    <div id="add_tags_<%=post.id%>" class="add_tags_panel" style="display:none;">
+       <%=render :partial=>"posts/add_tags", :locals=>{:post=>post}%>
+    </div>
+     <div id='content_<%=post.id%>' class='content'>
+       <%= search ? highlight_search_words(html_encode(post.content, true), @words) : html_encode(post.content, true)%>
+       <%=render :partial=>"topics/post_files", :locals=>{:files=>post.files}%>
+     </div>
+     
+     <%if is_moderator and post.ip%>
+       <%ip=post.ip.split('.')%>
+       <div class='posted_from_ip'><%="posted from "[:posted_from]%> <%=link_to post.ip, ip_posts_path(*ip)%></div>
+     <%end%>
+     
+	   <div class='reply' id='reply_div_<%=post.id%>' style="display:none;"></div>
+	   <div class='signature'><%=html_encode(post.user.signature, true)%></div>
+    </div>
+    
+    <div class='tags' id="tags_<%=post.id%>">
+      <%=render :partial=>'partials/tags', :locals=>{:tags=>post.visible_tags_for?(current_user), :post=>post}%>
+    </div>
+  </td>
+</tr>

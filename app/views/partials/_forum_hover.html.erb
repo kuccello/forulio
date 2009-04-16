@@ -1,0 +1,8 @@
+<img id="forum_hint_loader_<%=forum.id%>" src="/images/loader1.gif" style="display:none" />
+<div id="forum_tasks_content_<%=forum.id%>">
+<%=link_to_remote image_tag('delete.png') , :url=>{:controller=>'admin/forum', :action=>'delete', :id=>forum}, 
+    					:loading => "Forum.startRemoteTask(#{forum.id});", :confirm=> "Sure?"[:sure_] %>
+<%=link_to_remote image_tag('edit.png') , :url=>{:controller=>'admin/forum', :action=>'edit', :id=>forum}, 
+    					:loading => "Forum.startRemoteTask(#{forum.id});",
+						:complete=>"Forum.stopRemoteTask(#{forum.id});" %>
+</div>

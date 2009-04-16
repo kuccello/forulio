@@ -1,0 +1,28 @@
+<%to = @to_user ? "#{@to_user.login}" : 'all'[:all] %>
+<%content_for(:title, ("All messages "[:all_messages]))%>
+
+<%content_for :page_header do%>
+ <h1 class='forum_title'><%="All messages "[:all_messages]%></h1>
+
+ 
+<div class='new_types'>
+
+     <%if params[:sent]%>
+        <span><%=link_to "Received"[:received], :sent=>nil %></span>  
+	  		<span class='active'><%="Sent"[:sent]%></span>
+      <%else %>
+        <span class='active'><%="Received"[:received]%></span>  
+	  		<span><%=link_to "Sent"[:sent], :sent=>1 %></span>        
+     <%end%>
+</div>
+ 
+<%end%>
+
+
+<%= will_paginate(@messages) || "<div class='clear' style='height:10px;'></div>" %>
+<%=render :partial=>"conversation", :locals=>{:messages => @messages}%>
+
+
+<%= will_paginate(@messages) || "<div class='clear' style='height:10px;'></div>" %>
+
+

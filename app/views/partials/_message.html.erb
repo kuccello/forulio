@@ -1,0 +1,11 @@
+    <%message.update_attribute(:read, true) unless message.read%>
+    <%=html_encode(message.body, true)%>
+    <div>
+      <div style="float:right;">
+        <%=link_to_remote "Hide this message"[:hide_this_message], :url=>{:controller=>'messages', :action=>"hide", :id=>message.id}%>
+      </div>
+      <i><%="From"[:from]%> <%=link_to message.sender.login, profile_path(message.sender)%></i>
+      <small><%=link_to image_tag('im.gif', :title=>"send message"[:send_message]), send_message_path(message.sender)%></small>
+    </div>
+    
+

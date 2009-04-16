@@ -1,0 +1,10 @@
+--- 
+translations: 
+  :password: Password
+  :email: Email
+  :sign_in: Login
+  :send_verification_email: Send verification email
+  :forgot_password: Forgot password
+  :sign_in_button: Sign in
+  :remember_me: Remember me
+  
