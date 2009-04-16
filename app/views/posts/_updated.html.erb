@@ -1,5 +1,0 @@
-<%=html_encode(post.content, true)%>
-<%=render :partial=>"topics/post_files", :locals=>{:files=>post.files, :show_topics=>false}%>
-<div class="message_flash" id="post_updated_<%=post.id%>">
-  <%="Your post is updated!"[:your_post_is_updated]%>
-</div>

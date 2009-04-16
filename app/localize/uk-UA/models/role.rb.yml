@@ -1,6 +1,0 @@
---- 
-translations: 
-  :title: Назва ролі
-  :role_valid_format: має недозволені символи
-  :role_too_long: має бути меншою за 100 символів.
-  :role_too_short: має бути більшою за 2 символи.
